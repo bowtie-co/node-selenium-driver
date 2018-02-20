@@ -1,0 +1,53 @@
+{
+  "name": "@bowtie/selenium-driver",
+  "version": "0.1.0",
+  "description": "Wrapper for selenium-webdriver",
+  "main": "index.js",
+  "engines": {
+    "node": ">=7.6"
+  },
+  "scripts": {
+    "doc": "jsdoc --configure .jsdoc.json --verbose",
+    "doc:commit": "npm run doc && git add docs && git commit -m 'Generated Docs'",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "npm run lint && mocha test/**/*.spec.js",
+    "test:watch": "mocha test/**/*.spec.js --watch",
+    "preversion": "npm test && npm run doc:commit",
+    "postversion": "git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bowtie-co/node-selenium-driver.git"
+  },
+  "keywords": [
+    "selenium",
+    "webdriver",
+    "test",
+    "ci",
+    "e2e",
+    "browser",
+    "bowtie"
+  ],
+  "author": "Bowtie",
+  "license": "MIT",
+  "standard": {
+    "ignore": [
+      "docs/*"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/bowtie-co/node-selenium-driver/issues"
+  },
+  "homepage": "https://github.com/bowtie-co/node-selenium-driver#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "jsdoc": "^3.5.5",
+    "minami": "^1.2.3",
+    "mocha": "^5.0.1",
+    "standard": "^11.0.0"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
