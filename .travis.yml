@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 8
+deploy:
+  provider: npm
+  email: charlie@bowtie.co
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: bowtie-co/node-selenium-driver
+  api_key:
+    secure: EtESPkhD1N4be0ULxvqohwiaI3qRCLPqHoSe3reVLqtZ0f/UoLSF9EyygY65NoFqqbGHcOjkmyjRO5m1iBTXsaDKGLyx1+WAvxnnpXC9sjvcpGVDai1JJc68qX9xXtcKoNmxJwq2NPrYzkxfzWRE6JikVCjcyeFXw2LaWYNhWaH6rjliLKkxcV6YZiIC66ozudPOPV3KrXXDn7aTHYJhGCYMm0vdCEB7gRp+MQy6358GF4ajkFSfeulfb32bO2/9gBiuDDnstxRNz42czvDvXGvHotXAY+JeI0g/bkBPPoneJOQmqk/+2ctiyKa2E6xBF2mQjiLBmb8kcDAyb6Sq1PWWXSInJmWrh1gNFnYbj/Xgw44owlz0vP9tBJTlvik/NAJkbp3/e6WVZJ350nWlTzA4vLGRGJe1rj6m2d7htTGLq2YXeXGj5lpsgjTpii7sYdj2PMcq9K3KaT5njSKdILqL+DEks4z+gSkVqdEVWYCQpHMh2RVOij4jkigNZtYtStRQri3071t/dPV3Xzhwen+awbYyK64pm+jx+XMOWKGPpIkNOn/v+Lf582Eo4SvUAZmZhZoYdA+tncHBZUe97BzKBHTm+jeFiUGooqHWDrWAQbkcjBDki1fGE30t500UO8Izx+6iINg5Nho5+hHJYBDWg5MAPfrVy7i88aMMjUk=
