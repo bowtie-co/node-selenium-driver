@@ -278,7 +278,7 @@ class SeleniumDriver {
       if (e) console.log(e)
     })
 
-    msg += `Debug files created in: ${dirName}\n`
+    msg += `\n\nDebug files created in: ${dirName}\n`
     msg += execSync(`ls -l ${dirName}`).toString()
 
     throw new Error(msg)
