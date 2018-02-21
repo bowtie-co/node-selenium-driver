@@ -12,7 +12,7 @@ const { Builder, By, Key, until, logging } = require('selenium-webdriver')
  * <p>`export BASE_URL=http://example.com`</p>
  * <p>`BASE_URL=http://example.com npm run myTestScript`</p>
  * </pre>
- * @property {string} [logLevel='SEVERE'] - Log level for debug browser logs 
+ * @property {string} [logLevel='SEVERE'] - Log level for debug browser logs
  * <p>Allowed values:</p>
  * <ul style="list-style: none; padding: 0;">
  *   <li>`'OFF'` - Turns off logging</li>
@@ -169,7 +169,7 @@ class SeleniumDriver {
   }
 
   /**
-   * Wait for element specified by css `selector` and optional `content`. 
+   * Wait for element specified by css `selector` and optional `content`.
    * @param {string} selector - CSS selector of expected element
    * @param {string|RegExp} [content] - Optional content to also be expected within element text
    * @param {boolean} [exact=false] - If `true` and `content` is a `string`, then expect element with text exactly `content`
@@ -286,7 +286,7 @@ class SeleniumDriver {
 
   /**
    * Ensure `page` begins with a slash
-   * @param {string} page 
+   * @param {string} page
    */
   _pagePath (page) {
     let path = page
