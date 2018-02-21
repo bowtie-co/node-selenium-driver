@@ -1,4 +1,45 @@
-const fs = require('fs')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SeleniumDriver.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SeleniumDriver.html">SeleniumDriver</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#_matchText">_matchText</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#_matchTextNot">_matchTextNot</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#_pagePath">_pagePath</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#click">click</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#elementSelector">elementSelector</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#error">error</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#expectElement">expectElement</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#expectPage">expectPage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#expectStale">expectStale</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#expectTitle">expectTitle</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#fillIn">fillIn</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#quit">quit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#select">select</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#start">start</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SeleniumDriver.html#visit">visit</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#defaults">defaults</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">SeleniumDriver.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const fs = require('fs')
 const { execSync } = require('child_process')
 const { Builder, By, Key, until, logging } = require('selenium-webdriver')
 
@@ -8,20 +49,20 @@ const { Builder, By, Key, until, logging } = require('selenium-webdriver')
  * @property {number} [timeout=1000] - Timeout (in ms) for each call to driver.wait()
  * @property {string} [browser='chrome'] - Browser to use with this driver
  * @property {string} [baseUrl='http://localhost:3000'] - Base URL to test against
- * <p>Set via environment variable: `BASE_URL`</p>
- * <p>`export BASE_URL=http://example.com`</p>
- * <p>`BASE_URL=http://example.com npm run myTestScript`</p>
- * </pre>
+ * &lt;p>Set via environment variable: `BASE_URL`&lt;/p>
+ * &lt;p>`export BASE_URL=http://example.com`&lt;/p>
+ * &lt;p>`BASE_URL=http://example.com npm run myTestScript`&lt;/p>
+ * &lt;/pre>
  * @property {string} [logLevel='SEVERE'] - Log level for debug browser logs 
- * <p>Allowed values:</p>
- * <ul style="list-style: none; padding: 0;">
- *   <li>`'OFF'` - Turns off logging</li>
- *   <li>`'SEVERE'` - Messages about things that went wrong. For instance, an unknown command.</li>
- *   <li>`'WARNING'` - Messages about things that may be wrong but was handled. For instance, a handled exception.</li>
- *   <li>`'INFO'` - Messages of an informative nature. For instance, information about received commands.</li>
- *   <li>`'DEBUG'` - Messages for debugging. For instance, information about the state of the driver.</li>
- *   <li>`'ALL'` - All log messages. A way to collect all information regardless of which log levels that are supported.</li>
- * </ul>
+ * &lt;p>Allowed values:&lt;/p>
+ * &lt;ul style="list-style: none; padding: 0;">
+ *   &lt;li>`'OFF'` - Turns off logging&lt;/li>
+ *   &lt;li>`'SEVERE'` - Messages about things that went wrong. For instance, an unknown command.&lt;/li>
+ *   &lt;li>`'WARNING'` - Messages about things that may be wrong but was handled. For instance, a handled exception.&lt;/li>
+ *   &lt;li>`'INFO'` - Messages of an informative nature. For instance, information about received commands.&lt;/li>
+ *   &lt;li>`'DEBUG'` - Messages for debugging. For instance, information about the state of the driver.&lt;/li>
+ *   &lt;li>`'ALL'` - All log messages. A way to collect all information regardless of which log levels that are supported.&lt;/li>
+ * &lt;/ul>
  * @property {string} [homePagePath='/'] - Path to homepage. Visited on {@link SeleniumDriver#start}
  * @property {string} [debugDirectory='tmp/selenium-debug'] - Directory to save debug logs and screenshots from failures
 **/
@@ -121,8 +162,8 @@ class SeleniumDriver {
 
   /**
    * Select an option with value or text `value` specified by css `selector`
-   * @param {string} selector - CSS selector of `<select>` element to pick from
-   * @param {string} value - Value (or text) of an `<option>` element to be selected
+   * @param {string} selector - CSS selector of `&lt;select>` element to pick from
+   * @param {string} value - Value (or text) of an `&lt;option>` element to be selected
    * @throws {Error} - Unable to select value/text: `'${value}'` from selector: `'${selector}'`
    */
   async select (selector, value) {
@@ -250,11 +291,11 @@ class SeleniumDriver {
 
     let selector = await element.getTagName()
 
-    if (id && id.trim() !== '') {
+    if (id &amp;&amp; id.trim() !== '') {
       selector += `#${id}`
     }
 
-    if (className && className.trim() !== '') {
+    if (className &amp;&amp; className.trim() !== '') {
       selector += `.${className.split(' ').join('.')}`
     }
 
@@ -338,3 +379,22 @@ class SeleniumDriver {
 }
 
 module.exports = SeleniumDriver
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Feb 20 2018 17:24:16 GMT-0700 (MST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
