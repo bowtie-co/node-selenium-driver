@@ -91,6 +91,8 @@ class SeleniumDriver {
   async click (selector) {
     const element = await this.expectElement(selector)
 
+    await this.scrollTo(element)
+
     try {
       await element.click()
     } catch (e) {
@@ -107,6 +109,8 @@ class SeleniumDriver {
    */
   async fillIn (selector, value, enter = false) {
     const element = await this.expectElement(selector)
+
+    await this.scrollTo(element)
 
     try {
       if (enter) {
@@ -129,6 +133,8 @@ class SeleniumDriver {
     let option
     const element = await this.expectElement(selector)
 
+    await this.scrollTo(element)
+
     try {
       await element.click()
 
@@ -145,6 +151,18 @@ class SeleniumDriver {
       await this.driver.wait(until.elementIsSelected(option), this.timeout)
     } catch (e) {
       this.error(`Unable to select value/text: '${value}' from selector: '${selector}'`)
+    }
+  }
+
+  /**
+   * Scroll to `element`
+   * @param {selenium-webdriver.WebElement} element - WebElement to scroll to
+   */
+  async scrollTo(element) {
+    try {
+      await this.driver.executeScript("arguments[0].scrollIntoView()", element)
+    } catch(e) {
+      await this.error(`Unable to scroll to element: '${await this.elementSelector(element)}'`)
     }
   }
 
