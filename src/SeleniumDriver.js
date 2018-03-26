@@ -158,10 +158,10 @@ class SeleniumDriver {
    * Scroll to `element`
    * @param {selenium-webdriver.WebElement} element - WebElement to scroll to
    */
-  async scrollTo(element) {
+  async scrollTo (element) {
     try {
-      await this.driver.executeScript("arguments[0].scrollIntoView()", element)
-    } catch(e) {
+      await this.driver.executeScript('arguments[0].scrollIntoView()', element)
+    } catch (e) {
       await this.error(`Unable to scroll to element: '${await this.elementSelector(element)}'`)
     }
   }
